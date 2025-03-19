@@ -6,21 +6,79 @@
     <title>About Zoho | Innovation & Excellence</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
-        header { background: #0073b1; color: white; padding: 20px; text-align: center; font-size: 24px; }
+        header { 
+            background: linear-gradient(135deg, #0073b1, #005a8d); 
+            color: white; 
+            padding: 20px; 
+            text-align: center; 
+            font-size: 28px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .marquee {
+            position: relative;
+            color: #fff;
+            background-color: #005a8d;
+            padding: 10px 0;
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+            overflow: hidden;
+            white-space: nowrap;
+            animation: moveText 15s linear infinite;
+        }
+        @keyframes moveText {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
         .container { width: 80%; margin: auto; padding: 20px; }
-        .section { background: white; padding: 20px; margin: 20px 0; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .section {
+            background: #ffffff;
+            padding: 25px;
+            margin: 20px 0;
+            border-left: 5px solid #0073b1;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+        .section:hover { transform: scale(1.02); background-color: #e6f7ff; }
         h2 { color: #0073b1; }
-        .footer { background: #0073b1; color: white; text-align: center; padding: 15px; margin-top: 20px; }
+        ul { list-style: none; padding-left: 0; }
+        ul li::before { content: "✔️"; color: #0073b1; margin-right: 8px; }
+        ul li { margin: 5px 0; }
+        .footer {
+            background: #0073b1;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #0073b1;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .btn:hover { background-color: #005a8d; }
+        @media (max-width: 768px) {
+            .container { width: 90%; padding: 15px; }
+            header { font-size: 22px; padding: 15px; }
+            .section { padding: 15px; }
+        }
     </style>
 </head>
 <body>
     <header>
         About Zoho - Driving Innovation & Business Excellence
     </header>
+    <div class="marquee">Empowering Businesses Worldwide with Smart Solutions | Trusted by Over 50 Million Users | Secure, Scalable, and Affordable Business Solutions</div>
     <div class="container">
         <div class="section">
             <h2>Who We Are</h2>
-            <p>Zoho is a global technology company that provides world-class business solutions in cloud computing, enterprise software, and digital transformation. With over 50 million users worldwide, we empower businesses with cutting-edge applications.</p>
+            <p>Zoho is a global technology company that empowers businesses with world-class cloud computing, enterprise software, and digital transformation solutions. Trusted by over 50 million users worldwide, Zoho drives innovation with scalable applications for businesses of all sizes.</p>
         </div>
         <div class="section">
             <h2>Our Strengths</h2>
@@ -28,27 +86,40 @@
                 <li>Comprehensive Suite of Business Applications</li>
                 <li>Innovative AI-driven Solutions</li>
                 <li>Privacy-Focused and Secure Infrastructure</li>
-                <li>Affordable and Scalable for Businesses of All Sizes</li>
+                <li>Affordable and Scalable for All Businesses</li>
                 <li>Customer-Centric Approach</li>
             </ul>
         </div>
-        <div class="section">
+        <div class="section achievements">
             <h2>Key Achievements</h2>
             <ul>
-                <li>Recognized as a leader in cloud-based business applications</li>
-                <li>Over 50+ million users across 180+ countries</li>
-                <li>Continuous innovation with 50+ enterprise-grade applications</li>
+                <li>Recognized as a cloud technology leader</li>
+                <li>Serving over 50 million users in 180+ countries</li>
+                <li>50+ enterprise-grade applications for business growth</li>
                 <li>Awarded for excellence in data security and user privacy</li>
-                <li>Empowering startups, SMEs, and large enterprises globally</li>
             </ul>
         </div>
         <div class="section">
             <h2>Why Choose Zoho?</h2>
-            <p>At Zoho, we believe in providing high-quality, cost-effective, and scalable business solutions. Whether you are a startup or a Fortune 500 company, Zoho helps you streamline operations, enhance productivity, and drive business growth.</p>
+            <p>We believe in delivering high-quality, cost-effective solutions. Whether you're a startup or a Fortune 500 company, Zoho streamlines operations, enhances productivity, and drives success.</p>
+            <div class="cta">
+                <a href="#" class="btn">Learn More</a>
+            </div>
         </div>
     </div>
     <div class="footer">
         &copy; 2025 Zoho Corporation. All Rights Reserved.
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const marquee = document.querySelector('.marquee');
+            marquee.addEventListener('mouseover', () => {
+                marquee.style.animationPlayState = 'paused';
+            });
+            marquee.addEventListener('mouseout', () => {
+                marquee.style.animationPlayState = 'running';
+            });
+        });
+    </script>
 </body>
 </html>
